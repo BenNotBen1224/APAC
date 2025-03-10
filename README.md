@@ -1,4 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# APAC Auto Glass Website
+
+A modern, bilingual (English/Chinese) auto glass service website built with Next.js 14, serving the Richmond and Burnaby areas of British Columbia.
+
+## Features
+
+- 🌐 Bilingual Support (English/Chinese)
+- 🚗 ICBC Glass Express Partner Integration
+- ⚡ 24/7 Emergency Service
+- 📱 Responsive Design
+- 🔄 ADAS Calibration Services
+- 🚘 Free Courtesy Car
+- 💎 Lifetime Warranty
+
+## Core Services
+
+- Windshield Replacement
+- Rock Chip Repairs
+- ADAS Calibration
+- ICBC Claims Processing
+- Winter Safety Services
+- Mobile Service
+
+## Tech Stack
+
+- **Framework:** Next.js 14
+- **Styling:** 
+  - Tailwind CSS
+  - Bootstrap 5
+  - Custom animations
+- **Components:** Server & Client Components
+- **Fonts:** Inter, Poppins, Noto Sans TC
+- **Icons:** Font Awesome
+
+## Project Structure
 
 ## Getting Started
 
