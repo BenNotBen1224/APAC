@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Poppins, Noto_Sans_TC } from "next/font/google";
+import { Inter, Poppins, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 const poppins = Poppins({
