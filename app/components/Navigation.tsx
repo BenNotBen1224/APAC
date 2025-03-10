@@ -1,14 +1,15 @@
 'use client';
 
 import AnimatedLogo from './AnimatedLogo';
+import Link from 'next/link';
 
 export default function Navigation() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-black fixed-top">
       <div className="container">
-        <a className="navbar-brand" href="/">
+        <Link href="/" className="navbar-brand">
           <AnimatedLogo />
-        </a>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -20,15 +21,15 @@ export default function Navigation() {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a className="nav-link" href="#services">Services</a>
+              <Link href="#services" className="nav-link">Services</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#quote">Get Quote</a>
+              <Link href="#quote" className="nav-link">Get Quote</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="tel:6042786100">
+              <Link href="tel:6042786100" className="nav-link">
                 <i className="fas fa-phone me-2"></i>604-278-6100
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

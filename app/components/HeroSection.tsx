@@ -21,59 +21,87 @@ const slides = [
     title: '24/7 Emergency Service',
     subtitle: '24小時緊急服務',
     description: 'Available When You Need Us Most'
+  },
+  {
+    image: '/images/benz.jpg',
+    title: 'Free Courtesy Car',
+    subtitle: '免費代用車服務',
+    description: 'Complimentary Vehicle While We Fix Yours'
   }
 ];
 
-export default function HeroCarousel() {
-  const [current, setCurrent] = useState(0);
+export default function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index);
+  };
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % slides.length);
-    }, 5000);
+    const timer = setInterval(nextSlide, 5000);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <header className="hero-section relative h-screen">
-      {slides.map((slide, index) => (
-        <div
-          key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === current ? 'opacity-100' : 'opacity-0'
-          }`}
-        >
-          <div className="absolute inset-0 bg-black bg-opacity-50 z-10"></div>
-          <Image
-            src={slide.image}
-            alt={slide.title}
-            fill
-            className="object-cover"
-            priority={index === 0}
-          />
-          <div className="relative z-20 container mx-auto h-full flex flex-col justify-center items-center text-white">
-            <div className="floating text-center">
-              <h1 className="display-1 fw-bold mb-2 glow animate-fadeInUp">{slide.title}</h1>
-              <h2 className="display-4 fw-bold mb-4 chinese-text">{slide.subtitle}</h2>
-              <p className="lead fs-2 mb-4 glass-effect p-3 rounded-lg inline-block">
-                {slide.description}
-              </p>
+    <div className="relative h-screen overflow-hidden">
+      <div 
+        className="flex transition-transform duration-500 ease-in-out h-full"
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
+        {slides.map((slide, index) => (
+          <div key={index} className="min-w-full h-full relative">
+            <Image
+              src={slide.image}
+              alt={slide.title}
+              fill
+              priority
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+              <div className="text-center text-white p-4">
+                <h1 className="text-4xl md:text-6xl font-bold mb-2">{slide.title}</h1>
+                <h2 className="text-2xl md:text-3xl mb-4">{slide.subtitle}</h2>
+                <p className="text-xl md:text-2xl">{slide.description}</p>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
-      
-      <div className="absolute bottom-5 left-0 right-0 z-30 flex justify-center gap-2">
+        ))}
+      </div>
+
+      {/* Navigation Arrows */}
+      <button 
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white hover:text-danger transition-colors"
+      >
+        <i className="fas fa-chevron-left fa-2x"></i>
+      </button>
+      <button 
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white hover:text-danger transition-colors"
+      >
+        <i className="fas fa-chevron-right fa-2x"></i>
+      </button>
+
+      {/* Dot Indicators */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full ${
-              index === current ? 'bg-danger' : 'bg-white'
+            onClick={() => goToSlide(index)}
+            className={`w-3 h-3 rounded-full transition-colors ${
+              currentSlide === index ? 'bg-danger' : 'bg-white bg-opacity-50'
             }`}
-            onClick={() => setCurrent(index)}
           />
         ))}
       </div>
-    </header>
+    </div>
   );
 }

@@ -62,30 +62,61 @@ body {
   font-size: 1.5rem;
 }
 
-.form-control {
-  border: none;
-  border-bottom: 1px solid white;
-  border-radius: 0;
-  padding: 0.75rem 0;
+.form-control,
+.form-select {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff !important;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
-.form-control:focus {
-  background-color: transparent;
-  box-shadow: none;
+.form-control:focus,
+.form-select:focus {
+  background-color: rgba(0, 0, 0, 0.8) !important;
   border-color: #dc3545;
-  color: white;
+  box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 
-.form-control::placeholder {
-  color: rgba(255,255,255,0.7);
+.form-control::placeholder,
+.form-select::placeholder {
+  color: rgba(255, 255, 255, 0.7) !important;
+  opacity: 1;
 }
 
 .form-select {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid white;
-  border-radius: 0;
-  color: white;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+  background-position: right 0.75rem center;
+  background-repeat: no-repeat;
+  background-size: 1.5em;
+  color: #ffffff !important;
+}
+
+.form-select option {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 0.5rem;
+}
+
+/* Style for the default select option */
+.form-select option[value=""] {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.quote-form {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.form-label {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0.5rem;
+  font-weight: 500;
 }
 
 /* High-tech animations and effects */

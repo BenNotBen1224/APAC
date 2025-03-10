@@ -1,3 +1,4 @@
+import ScrollRestoration from './components/ScrollRestoration';
 import type { Metadata } from "next";
 import { Inter, Poppins, Noto_Sans_TC } from "next/font/google";
 import "./globals.css";
@@ -38,6 +39,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <ScrollRestoration />
         <link
           href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css"
           rel="stylesheet"

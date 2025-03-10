@@ -12,12 +12,12 @@ const faqs = [
     answer: 'Yes, we are an ICBC-certified shop. We can handle your claim directly with ICBC, making the process hassle-free for you.'
   },
   {
-    question: 'What is ADAS calibration and when is it needed?',
-    answer: 'ADAS (Advanced Driver Assistance Systems) calibration is required after windshield replacement in modern vehicles with safety features like lane departure warning. It ensures all safety systems work correctly.'
+    question: 'Can my windshield still be repaired if there is more than one damage point?',
+    answer: 'Yes. As long as all points of damage meet the criteria mentioned above, we will likely be able to repair up to 3 damage points. Anything more than that would severely affect the windshield\'s structural strength and we would recommend a replacement.'
   },
   {
-    question: 'Do you offer mobile service?',
-    answer: 'Yes, we offer mobile service in Richmond and Burnaby areas. Our technicians can come to your location for both repairs and replacements.'
+    question: 'Will you calibrate my car\'s safety system sensors (ADAS)?',
+    answer: 'Yes. We are able to recalibrate the advanced sensors for any make or model.'
   }
 ];
 
